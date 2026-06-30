@@ -1,0 +1,11 @@
+# Cloned sources & build artifacts
+source/
+build/
+deps/
+
+# Archives / logs
+*.tar.gz
+*.log
+
+# macOS
+.DS_Store
