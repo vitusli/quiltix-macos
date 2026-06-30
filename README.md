@@ -1,6 +1,6 @@
 # quiltix-macos
 
-Build [QuiltiX](https://github.com/PrismPipeline/QuiltiX) on macOS Apple Silicon in a reproducible way.
+Build [QuiltiX](https://github.com/PrismPipeline/QuiltiX) on macOS Apple Silicon.
 
 This repository contains a self-contained `build.sh` that:
 
