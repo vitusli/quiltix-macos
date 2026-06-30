@@ -16,12 +16,13 @@ USD_REPO_URL="https://github.com/PixarAnimationStudios/OpenUSD.git"
 # Pinned commits for reproducibility.
 QX_COMMIT="c83f929b284b38d623fb0c9697b00a6d9606a5d8"
 USD_COMMIT="3e3890068e17f0e31dc34f906f7f1fa1037dd7da"
+MATERIALX_PY_VERSION="1.39.5"
 
 QX_SRC_DIR="$SOURCE_DIR/QuiltiX"
 USD_SRC_DIR="$DEPS_DIR/OpenUSD"
 
 VENV_DIR="$BUILD_DIR/.venv311"
-USD_INSTALL_DIR="$DEPS_DIR/openusd-26.05-py311-arm64"
+USD_INSTALL_DIR="$DEPS_DIR/openusd-py311-arm64"
 
 SKIP_OPENUSD_BUILD=0
 PYTHON_BIN="${QX_PYTHON_BIN:-}"
@@ -105,6 +106,7 @@ mkdir -p "$SOURCE_DIR" "$DEPS_DIR" "$BUILD_DIR"
 
 printf "==> Root:   %s\n" "$ROOT_DIR"
 printf "==> Python: %s\n" "$PYTHON_BIN"
+printf "==> MaterialX (Python): %s\n" "$MATERIALX_PY_VERSION"
 
 if [ ! -d "$QX_SRC_DIR/.git" ]; then
   git clone "$QX_REPO_URL" "$QX_SRC_DIR"
@@ -125,6 +127,7 @@ if [ ! -x "$VENV_DIR/bin/python" ]; then
 fi
 
 "$VENV_DIR/bin/python" -m pip install --upgrade pip setuptools wheel
+"$VENV_DIR/bin/pip" install "materialx==$MATERIALX_PY_VERSION"
 "$VENV_DIR/bin/pip" install "$QX_SRC_DIR"
 
 if [ "$SKIP_OPENUSD_BUILD" -eq 0 ]; then

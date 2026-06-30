@@ -10,6 +10,12 @@ This repository contains a self-contained `build.sh` that:
 - builds OpenUSD with `usdview` and `MaterialX` support (needed by QuiltiX)
 - validates imports and creates launcher scripts
 
+## Versions used
+
+- **OpenUSD:** `0.26.8` (from pinned commit `3e3890068e17f0e31dc34f906f7f1fa1037dd7da`)
+- **MaterialX (Python package):** `1.39.5` (explicitly installed/pinned in `build.sh`)
+- **QuiltiX:** pinned commit `c83f929b284b38d623fb0c9697b00a6d9606a5d8`
+
 ## Build from source
 
 ```bash
@@ -70,6 +76,7 @@ The script pins upstream commits directly in `build.sh`:
 
 - QuiltiX commit: `c83f929b284b38d623fb0c9697b00a6d9606a5d8`
 - OpenUSD commit: `3e3890068e17f0e31dc34f906f7f1fa1037dd7da`
+- MaterialX Python package: `1.39.5`
 
 ## License
 
